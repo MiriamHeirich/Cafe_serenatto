@@ -1,30 +1,12 @@
 <?php
-    $produtosCafe = [
-            [
-                    'nome' => "Café Cremoso",
-                    'descricao' => "Café cremoso irresistivelmente suave e que envolve seu paladar",
-                    'preco' => "5.00",
-                    'imagem' => "img/cafe-cremoso.jpg"
-            ],
-            [
-                'nome' => "Café com Leite",
-                'descricao' => "A harmonia do café e do leite, uma experiência reconfortante",
-                'preco' => "2.00",
-                'imagem' => "img/cafe-com-leite.jpg"
-            ],
-        [
-            "nome" => "Cappuccino",
-            "descricao" => "Café suave, leite cremoso e uma pitada de sabor adocicado",
-            "preco" => "7.00",
-            "imagem"=> "img/cappuccino.jpg"
-        ],
-        [
-            "nome" => "Café Gelado",
-            "descricao" => "Café gelado refrescante, adoçado e com notas sutis de baunilha ou caramelo.",
-            "preco" => "3.00",
-            "imagem"=> "img/cafe-gelado.jpg"
-        ]
-    ];
+
+    require "src/conexao_bd.php";
+    $sql1  = "SELECT * FROM produtos WHERE tipo = 'Café'";
+    $statement = $pdo->query($sql1);
+    $produtosCafe = $statement->fetchAll(PDO::FETCH_ASSOC);
+   
+
+   
 
 $produtosAlmoco = [
     [
